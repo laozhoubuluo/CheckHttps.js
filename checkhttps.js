@@ -3,7 +3,8 @@
 /* 根据检测结果为具备HTTPS能力的浏览器升级至HTTPS接入方式，以提高网站整体安全性和客户声誉。 */
 if(location.href.indexOf('https') == -1) {//判断现在连接是否为HTTPS，如已经是HTTPS就不作操作。
 	var ImgObj = new Image();
-	ImgObj.src = "right.gif";//使用HTTPS方式存取图片，不支持证书或SNI的浏览器会报错
+	ImgObj.src = "https://your_website.com/right.gif";//使用HTTPS方式存取图片，不支持证书或SNI的浏览器会报错，
+	//请保存本图片，并设置文件路径，必须采用HTTPS协议访问。
 	ImgObj.onload = function(){//加载成功则执行判断指令
 		if (ImgObj.complete == "true" || (ImgObj.width > 0 && ImgObj.height > 0)) {
 			location.href = location.href.replace('http://','https://');//如果获取到的图片正确则跳转网页至HTTPS版本
